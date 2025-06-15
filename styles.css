@@ -72,6 +72,11 @@ body {
     transform: none;
 }
 
+h1 {
+    color: #fff;
+    text-align: center;
+}
+
 .cursor-trail {
     position: fixed;
     height: 50px;
