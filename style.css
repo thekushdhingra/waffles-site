@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.waffle-bg {
+    background: url("https://images.unsplash.com/photo-1554893898-52600b2d7fb4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHdhZmZsZSUyMGNob2NvbGF0ZXxlbnwwfHwwfHx8MA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html {
+    color: #ffffff;
+    font-family: sans-serif;
+}
+
+.rand-waf {
+    width: 20rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.waffles-page {
+    background-color: #d2b48c;
+    color: rgb(60, 30, 10)
+}
+
+.waffles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-dark {
+    backdrop-filter: blur(8px) brightness(0.5);
+}
+
+
+.chocolate {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("/chocolate.jpg");
+    border: none;
+    outline: none;
+    margin-top: 1rem;
+    padding: 1.4rem;
+    background-size: 200% 200%;
+    color: #d2b48c;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.chocolate:hover {
+    background-position: 100% 100%;
+}
+
+a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    text-align: center;
+    color: bisque;
+}
+
+a:hover {
+    color: #d2b48c
+}
+
+.chocolate-piece {
+    position: fixed;
+    top: -40px;
+    width: 18px;
+    height: 18px;
+    background: #6b3e26;
+    border: 2px solid #d2b48c;
+    border-radius: 4px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 1;
+    box-shadow: 0 2px 6px rgba(60, 30, 10, 0.2);
+    animation: chocolate-fall linear;
+}
+
+@keyframes chocolate-fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    padding: 4rem;
+}
+
+h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+}
+
+p {
+    font-size: 2rem;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="waffle-bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Waffles site</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container bg-dark">
+      <h1>I love Kitkat waffles!</h1>
+      <p>
+        KitKat waffles are an absolute game-changer—like, who thought combining
+        crispy chocolate with fluffy waffles could hit this hard? Imagine warm,
+        golden waffles with crushed KitKat bars baked right in or melted on top,
+        so every bite is this epic combo of crunchy, gooey, and sweet. It’s the
+        kind of dessert that doesn’t just satisfy your sweet tooth, it
+        straight-up makes your day better. I love them because they take two of
+        my favorite things—waffles and KitKats—and mash them into one fire treat
+        that feels indulgent but totally worth it. They’re not just food,
+        they’re a vibe.
+      </p>
+      <button class="chocolate" id="chocolate">Toggle Chocolate rain</button>
+      <button
+        onclick="for (let i = 0; i < 100; i++) { createChocolatePiece() }"
+        class="chocolate"
+      >
+        Beeg chocolate rain
+      </button>
+      <a href="/waffles.html">Here have some waffles!</a>
+    </div>
+    <script>
+      let raining = false;
+      let rainInterval = null;
+      const chocolatePieces = [];
+
+      function createChocolatePiece() {
+        const piece = document.createElement("span");
+        piece.className = "chocolate-piece";
+        piece.style.left = Math.random() * (window.innerWidth - 20) + "px";
+        piece.style.animationDuration = 1.8 + Math.random() * 1.5 + "s";
+        document.body.appendChild(piece);
+        chocolatePieces.push(piece);
+
+        piece.addEventListener("animationend", () => {
+          piece.remove();
+        });
+      }
+
+      document.getElementById("chocolate").onclick = function () {
+        raining = !raining;
+        if (raining) {
+          rainInterval = setInterval(createChocolatePiece, 120);
+          this.textContent = "Stop Chocolate rain";
+        } else {
+          clearInterval(rainInterval);
+          this.textContent = "Toggle Chocolate rain";
+        }
+      };
+    </script>
+  </body>
+</html>

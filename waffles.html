@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" class="waffles-page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waffles - Waffles site</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>100% OFF DISCOUNT ON WAFFLES</h1>
+        <button class="chocolate" id="chocolate">Order Now!</button>
+      </div>
+      <div style="display: none" class="waffles">
+        <h2>Here Have Some Waffles for $0.00000</h2>
+        <img src="/waffles.jpg" alt="" />
+      </div>
+    </div>
+    <audio id="yippee" src="yippee.mp3" preload="auto"></audio>
+    <script>
+      const btn = document.querySelector("#chocolate");
+      const wafflesDiv = document.querySelector(".waffles");
+      const yippeeAudio = document.getElementById("yippee");
+      btn.onclick = () => {
+        wafflesDiv.style.display = "flex";
+        yippeeAudio.currentTime = 0;
+        yippeeAudio.play();
+      };
+    </script>
+  </body>
+</html>
